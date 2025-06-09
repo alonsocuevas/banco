@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco - Aplicación</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="dark-theme">
+
+    <div class="container">
+
+        <div id="menu-container"></div>
+
+        <button id="toggleThemeBtn">Claro/Oscuro</button>
+        <a href="../index.html" class="boton">Volver</a>
+
+        <h1>Banco de la Esquina</h1>
+
+        <div id="messages" class="messages-area">
+            </div>
+
+        <div class="main-sections">
+
+            <div class="card"> 
+                <h2>Validar Usuario</h2>
+                <div class="form-group">
+                    <label for="validarUser Rut">RUT:</label>
+                    <input type="text" id="validarUser Rut" placeholder="RUT del usuario">
+                </div>
+                <div class="form-group">
+                    <label for="validarUser Clave">Clave:</label>
+                    <input type="password" id="validarUser Clave" maxlength="4" placeholder="Clave de 4 dígitos">
+                </div>
+                <button id="validateUser Btn">Validar</button>
+                <div>
+                    <h5>Datos de prueba <br>Rut : 111-1 <br>Clave : 0123</h5>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Crear Nuevo Usuario</h2>
+                <div class="form-group">
+                    <label for="userRut">RUT:</label>
+                    <input type="text" id="userRut" placeholder="Ej: 12345678-9">
+                </div>
+                <div class="form-group">
+                    <label for="userName">Nombre:</label>
+                    <input type="text" id="userName" placeholder="Ej: Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label for="userClave">Clave (4 dígitos):</label>
+                    <input type="password" id="userClave" maxlength="4" placeholder="Ej: 0123">
+                </div>
+                <button id="createUserBtn">Crear Usuario</button>
+            </div>
+
+            <div class="card">
+                <h2>Crear Nueva Cuenta</h2>
+                <div class="form-group">
+                    <label for="cuentaId">ID Cuenta:</label>
+                    <input type="number" id="cuentaId" placeholder="Ej: 1001">
+                </div>
+                <div class="form-group">
+                    <label for="cuentaSaldoInicial">Saldo Inicial:</label>
+                    <input type="number" id="cuentaSaldoInicial" value="0" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="cuentaTipo">Tipo de Cuenta:</label>
+                    <select id="cuentaTipo">
+                        <option value="V">Vista</option>
+                        <option value="C">Corriente</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cuentaEsEmpresa">Es Empresa:</label>
+                    <input type="checkbox" id="cuentaEsEmpresa">
+                </div>
+                <div class="form-group">
+                    <label for="cuentaUsuarioRut">RUT del Usuario Asociado:</label>
+                    <input type="text" id="cuentaUsuarioRut" placeholder="RUT de un usuario existente">
+                </div>
+                <button id="createAccountBtn">Crear Cuenta</button>
+            </div>
+        </div>
+
+        <div class="main-sections">
+            <div class="card full-width">
+                <h2>Operaciones de Cuenta</h2>
+                <div class="form-group">
+                    <label for="operacionCuentaId">ID de Cuenta:</label>
+                    <input type="number" id="operacionCuentaId" placeholder="ID de la cuenta a operar">
+                </div>
+                <div class="form-group">
+                    <label for="operacionMonto">Monto:</label>
+                    <input type="number" id="operacionMonto" value="0" min="1">
+                </div>
+                <div class="button-group">
+                    <button id="depositBtn">Depositar</button>
+                    <button id="withdrawBtn">Retirar</button>
+                    <button id="showAccountDataBtn">Mostrar Datos</button>
+                    <button id="maxGiroBtn">Máximo Giro</button>
+                </div>
+                <div id="operacionResultado" class="result-display">
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

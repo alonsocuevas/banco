@@ -31,15 +31,21 @@ body {
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
+
+    background-image: url('../img/fondo.jpg');
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
 .container {
-    background-color: var(--container-bg);
+    
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 900px;
     width: 100%;
+     
 }
 
 h1 {
@@ -193,6 +199,27 @@ button:hover {
     min-width: 120px;
     margin-top: 0;
 }
+
+
+.boton {
+    display: inline-block;
+    margin-top: 20px; /* Espacio entre el texto y el botón */
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Azul */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none; /* Quita el subrayado */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: background 0.3s ease-in-out;
+}
+
+.boton:hover {
+    background-color: #0056b3; /* Efecto al pasar el mouse */
+}
+
 
 .result-display {
     background-color: var(--result-bg);
