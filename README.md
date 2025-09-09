@@ -45,44 +45,33 @@ https://alonsocuevas.github.io/banco/appbanco/index.html
    git clone https://github.com/alonsocuevas/banco.git
    cd banco/appbanco
 
-Abre index.html en un navegador o sube carpeta a GitHub Pages.
+2. Abre index.html en un navegador o sube carpeta a GitHub Pages.
 
-Interactúa con la interfaz:
+3. Interactúa con la interfaz:
 
-Crear usuario
+- Crear usuario
+- Crear cuenta
+- Validar usuario (ruta: RUT + clave 0123)
+- Depositar, retirar, mostrar datos, máximo giro
 
-Crear cuenta
+## Tecnologías
 
-Validar usuario (ruta: RUT + clave 0123)
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- Tema claro/oscuro con CSS custom properties
 
-Depositar, retirar, mostrar datos, máximo giro
+## Prueba incorporada
 
-Tecnologías
+- RUT: 111-1
+- Clave: 0123
+## Mejoras sugeridas
 
-HTML5
+- Uso de localStorage o BD para persistencia
+- Tests unitarios (ej. Jest)
+- Autenticación más segura (hashing de claves)
+- CI/CD y depuración en consola
 
-CSS3
+## Autor
+- Alonso Cuevas Pizarro [![Mi GitHub](https://img.shields.io/badge/-GitHub-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/alonsocuevas)
 
-JavaScript (ES6)
-
-Tema claro/oscuro con CSS custom properties
-
-Prueba incorporada
-
-RUT: 111-1
-
-Clave: 0123
-
-Mejoras sugeridas
-
-Uso de localStorage o BD para persistencia
-
-Tests unitarios (ej. Jest)
-
-Autenticación más segura (hashing de claves)
-
-CI/CD y depuración en consola
-
-Autor
-
-Alonso Cuevas Pizarro — GitHub
