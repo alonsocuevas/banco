@@ -32,7 +32,7 @@ body {
     align-items: flex-start;
     min-height: 100vh;
 
-    background-image: url('../img/fondo.jpg');
+    background-image: url('img/fondo.jpg');
     background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
