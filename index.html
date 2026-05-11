@@ -4,45 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BancoApp</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
 </head>
-<body>
-    <div class="contenedor">
-        <div class="izquierda">
-            <img src="img/banco.png" alt="">
-            <br>
-            <h1 id="titulo"></h1>
-        </div>
-        <div class="derecha">
-            
-            <div class="texto">
-                <p>🔥Logica de negocios</p>
 
-                <p class="texto-justificado">
-                    El banco “de la Plaza” ha decidido realizar una nueva aplicación para sus clientes que mantienen su dinero depositado. Los retiros de dinero y los depósitos entregarán el saldo resultante de cada operación.<br>
-                    Para esto se requiere crear un sistema que almacene información de sus usuarios y sus cuentas.<br>
-                    • De los usuarios se requiere almacenar el Rut, nombre, clave de 4 dígitos.<br>
-                    • Por otra parte, la cuenta debe tener un número de identificador, saldo (cantidad de dinero que mantiene), un campo que almacena tipo de cuenta (cuenta corriente o cuenta vista), si su cuenta de usuario es empresa o cuenta persona.<br>
-                    Aparte de ello se requiere tener ciertos requisitos a cumplir:<br>
-                    • El nombre del usuario no debe venir en blanco.<br>
-                    • El tipo de cuenta debe ser únicamente Corriente o Vista.<br>
-                    • La clave numérica debe tener 4 dígitos y puede comenzar con ceros.<br>
-                    • Validar la cuenta de usuario.<br>
-                    • Cuenta empresas puede girar hasta 1 millón si es que les alcanza el saldo.<br>
-                    • Cuenta personas pueden girar hasta 200 mil si es que les alcanza el saldo
-                </p>
+<body class="dark-theme">
+
+    <div class="container">
+
+        <div id="menu-container"></div>
+
+        <button id="toggleThemeBtn">Claro/Oscuro</button>
+        <a href="https://alonsocuevas.github.io/dev/#works" class="boton">Portafolio</a>
+        <a href="https://github.com/alonsocuevas/banco" class="github-btn" target="_blank">
+    <i class="fab fa-github"></i>
+</a>
+
+        <h1>Banco de la Esquina</h1>
+
+        <div id="messages" class="messages-area">
             </div>
 
-            <br>
+        <div class="main-sections">
 
-            <div> 
-                <a href="appbanco/index.html" class="boton">Ir al Banco</a>
-                <a href="https://alonsocuevas.github.io/dev/" class="boton">Volver a Portafolio</a>
+            <div class="card"> 
+                <h2>Validar Usuario</h2>
+                <div class="form-group">
+                    <label for="validarUser Rut">RUT:</label>
+                    <input type="text" id="validarUser Rut" placeholder="RUT del usuario">
+                </div>
+                <div class="form-group">
+                    <label for="validarUser Clave">Clave:</label>
+                    <input type="password" id="validarUser Clave" maxlength="4" placeholder="Clave de 4 dígitos">
+                </div>
+                <button id="validateUser Btn">Validar</button>
+                <div>
+                    <h5>Datos de prueba <br>Rut : 111-1 <br>Clave : 0123</h5>
+                </div>
             </div>
-            
+
+            <div class="card">
+                <h2>Crear Nuevo Usuario</h2>
+                <div class="form-group">
+                    <label for="userRut">RUT:</label>
+                    <input type="text" id="userRut" placeholder="Ej: 12345678-9">
+                </div>
+                <div class="form-group">
+                    <label for="userName">Nombre:</label>
+                    <input type="text" id="userName" placeholder="Ej: Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label for="userClave">Clave (4 dígitos):</label>
+                    <input type="password" id="userClave" maxlength="4" placeholder="Ej: 0123">
+                </div>
+                <button id="createUserBtn">Crear Usuario</button>
+            </div>
+
+            <div class="card">
+                <h2>Crear Nueva Cuenta</h2>
+                <div class="form-group">
+                    <label for="cuentaId">ID Cuenta:</label>
+                    <input type="number" id="cuentaId" placeholder="Ej: 1001">
+                </div>
+                <div class="form-group">
+                    <label for="cuentaSaldoInicial">Saldo Inicial:</label>
+                    <input type="number" id="cuentaSaldoInicial" value="0" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="cuentaTipo">Tipo de Cuenta:</label>
+                    <select id="cuentaTipo">
+                        <option value="V">Vista</option>
+                        <option value="C">Corriente</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cuentaEsEmpresa">Es Empresa:</label>
+                    <input type="checkbox" id="cuentaEsEmpresa">
+                </div>
+                <div class="form-group">
+                    <label for="cuentaUsuarioRut">RUT del Usuario Asociado:</label>
+                    <input type="text" id="cuentaUsuarioRut" placeholder="RUT de un usuario existente">
+                </div>
+                <button id="createAccountBtn">Crear Cuenta</button>
+            </div>
         </div>
+
+        <div class="main-sections">
+            <div class="card full-width">
+                <h2>Operaciones de Cuenta</h2>
+                <div class="form-group">
+                    <label for="operacionCuentaId">ID de Cuenta:</label>
+                    <input type="number" id="operacionCuentaId" placeholder="ID de la cuenta a operar">
+                </div>
+                <div class="form-group">
+                    <label for="operacionMonto">Monto:</label>
+                    <input type="number" id="operacionMonto" value="0" min="1">
+                </div>
+                <div class="button-group">
+                    <button id="depositBtn">Depositar</button>
+                    <button id="withdrawBtn">Retirar</button>
+                    <button id="showAccountDataBtn">Mostrar Datos</button>
+                    <button id="maxGiroBtn">Máximo Giro</button>
+                </div>
+                <div id="operacionResultado" class="result-display">
+                    </div>
+            </div>
+        </div>
+
     </div>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -1,77 +1,243 @@
-# BancoApp – Banco de la Esquina
+# 🏦 BancoApp — Banco de la Esquina
 
-[![Estado](https://img.shields.io/badge/estado-%20concluido-yellow)](#) [![Licencia](https://img.shields.io/badge/licencia-MIT-blue)](#LICENSE) [![Stack](https://img.shields.io/badge/stack-HTML%2C%20CSS%2C%20JS-orange)](#)
+Aplicación web desarrollada para simular la gestión de usuarios y cuentas bancarias de un banco ficticio. El sistema permite registrar usuarios, crear cuentas bancarias, validar credenciales y realizar operaciones financieras básicas como depósitos y retiros, aplicando reglas de negocio específicas según el tipo de cliente.
 
-Aplicación web simulada para gestión de usuarios y cuentas bancarias. Permite crear usuarios y cuentas, validar credenciales, realizar depósitos y retiros, mostrar datos y calcular el máximo giro según tipo de cuenta.
+# 📸 Vista General
 
+BancoApp replica operaciones esenciales de una plataforma bancaria básica utilizando programación orientada a objetos con JavaScript.
+
+El proyecto implementa:
+
+- Gestión de usuarios y cuentas
+- Validaciones de seguridad y datos
+- Operaciones bancarias
+- Lógica de negocio personalizada
+- Interfaz moderna con modo oscuro/claro
+- Diseño responsive
+---
+# 🚀 Demo en Línea
+
+Disponible en GitHub Pages:
+
+🔗 https://alonsocuevas.github.io/banco/
 ---
 
-##  Estado del Proyecto
-
--  Funcionalidad básica implementada  
--  Mejores: persistencia, tests, autenticación segura
-
+# 🎯 Funcionalidades
+👤 Gestión de Usuarios
+- Registro de usuarios mediante:
+    - RUT
+    - Nombre
+    - Clave numérica de 4 dígitos
+- Validaciones:
+    - Nombre obligatorio
+    - Clave solo numérica
+    - Clave exactamente de 4 dígitos
+    - Permite claves que comienzan con cero
 ---
-
-## 🎯 Funcionalidades
-
-- Crear usuarios (RUT, nombre, clave de 4 dígitos)  
-- Crear cuentas (ID, saldo, tipo: Vista (V) o Corriente (C), empresa o persona)  
-- Validaciones:  
-  - Nombre no vacío  
-  - Clave numérica de 4 dígitos (puede comenzar con 0)  
-  - Tipo válido (V o C)  
-- Operaciones disponibles:  
-  - Depósito  
-  - Retiro con límites:  
-    - Empresa: hasta $1 000 000 si hay saldo  
-    - Persona: hasta $200 000 si hay saldo  
-  - Mostrar datos de cuenta  
-  - Calcular máximo giro permitido
-
+# 💳 Gestión de Cuentas
+- Creación de cuentas bancarias con:
+    - ID único
+    - Saldo inicial
+    - Tipo de cuenta:
+        - Cuenta Vista
+        - Cuenta Corriente
+    - Cuenta Empresa o Persona
+    - Asociación a usuario existente
+- Validación automática de:
+    - Tipo de cuenta válido
+    - Usuario asociado existente
+    - IDs duplicados
 ---
+# 💰 Operaciones Bancarias
+### Depósitos
+- Incremento de saldo
+- Validación de montos positivos
+- Actualización inmediata del balance
 
-##  Demo en línea
+### Retiros
+Aplicación de límites según tipo de cuenta:
+|Tipo de Cuenta|Limite Maximo
+|---|---|
+|Persona|$200.000|
+|Empresa|$1.000.000|
 
-Disponible en GitHub Pages:  
-https://alonsocuevas.github.io/banco/appbanco/index.html
+Además:
 
+- Verifica saldo suficiente
+- Bloquea montos inválidos
+- Muestra mensajes dinámicos
 ---
+# 🔐 Validación de Usuarios
 
-##  Instalación y Uso
+Sistema de autenticación simple mediante:
 
-1. Clona el repositorio:  
-   ```bash
-   git clone https://github.com/alonsocuevas/banco.git
-   cd banco/appbanco
+- RUT
+- Clave de 4 dígitos
 
-2. Abre index.html en un navegador o sube carpeta a GitHub Pages.
+Usuario de prueba incluido:
+```txt
+RUT: 111-1
+Clave: 0123
+```
+---
+# 🌗 Interfaz Moderna
+- Tema oscuro/claro dinámico
+- Diseño responsive
+- Cards organizadas
+- Mensajes visuales de éxito/error
+- Fondo personalizado
+- Integración de menú lateral dinámico
+- Botón directo al portafolio y GitHub
+---
+# 🧠 Reglas de Negocio Implementadas
 
-3. Interactúa con la interfaz:
+El sistema aplica las siguientes reglas:
 
-- Crear usuario
-- Crear cuenta
-- Validar usuario (ruta: RUT + clave 0123)
-- Depositar, retirar, mostrar datos, máximo giro
-
-## Tecnologías
-
+- El nombre del usuario no puede estar vacío
+- El tipo de cuenta solo puede ser:
+    - Corriente (C)
+    - Vista (V)
+- La clave debe:
+    - Ser numérica
+    - Tener exactamente 4 dígitos
+- Validación de existencia de usuario antes de crear cuenta
+- Restricción de retiros:
+    - Empresas → hasta $1.000.000
+    - Personas → hasta $200.000
+- No permite giros mayores al saldo disponible
+---
+# 🛠️ Tecnologías Utilizadas
 - HTML5
 - CSS3
-- JavaScript (ES6)
-- Tema claro/oscuro con CSS custom properties
+- JavaScript ES6
+- Programación Orientada a Objetos (POO)
+- DOM Manipulation
+- CSS Variables
+- Responsive Design
+---
+# 📂 Estructura del Proyecto
+```txt
+banco/
+├── img/
+├── app.js
+├── app2.js
+├── index.html
+├── README.md
+└── style.css
+```
+---
+# ⚙️ Instalación y Uso
+### 1️⃣ Clonar el repositorio
+```bash
+git clone https://github.com/alonsocuevas/banco.git
+```
+### 2️⃣ Entrar al proyecto
+```bash
+cd banco/appbanco
+```
+### 3️⃣ Ejecutar
+Abrir index.html en cualquier navegador moderno.
 
-## Prueba incorporada
+---
+# 🧪 Funcionalidades Disponibles
+### Crear Usuario
 
-- RUT: 111-1
-- Clave: 0123
-## Mejoras sugeridas
+Permite registrar nuevos usuarios con validación automática.
 
-- Uso de localStorage o BD para persistencia
-- Tests unitarios (ej. Jest)
-- Autenticación más segura (hashing de claves)
-- CI/CD y depuración en consola
+### Crear Cuenta
 
-## Autor
-- Alonso Cuevas Pizarro [![Mi GitHub](https://img.shields.io/badge/-GitHub-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/alonsocuevas)
+Asocia cuentas bancarias a usuarios existentes.
 
+### Validar Usuario
+
+Comprueba credenciales mediante RUT y clave.
+
+### Depositar
+
+Añade dinero a una cuenta existente.
+
+### Retirar
+
+Permite realizar giros aplicando restricciones de negocio.
+
+### Mostrar Datos
+
+Visualiza información completa de la cuenta.
+
+### Máximo Giro
+
+Calcula automáticamente el monto máximo permitido según:
+
+- saldo disponible
+- tipo de cliente
+---
+# 🧩 Arquitectura del Proyecto
+
+El sistema utiliza:
+
+### Clase Usuario
+Gestiona:
+- RUT
+- nombre
+- clave
+- validaciones
+
+### Clase Cuenta
+Gestiona:
+- saldo
+- tipo de cuenta
+- operaciones financieras
+- límites de giro
+
+### Objeto banco
+Actúa como almacenamiento temporal en memoria para:
+- usuarios
+- cuentas
+- búsquedas
+- validaciones
+---
+# 📱 Responsive Design
+
+La aplicación se adapta a:
+
+- Computadores
+- Tablets
+- Smartphones
+---
+# 🔒 Validaciones Implementadas
+
+✔ Nombre obligatorio
+
+✔ Clave numérica válida
+
+✔ Clave de 4 dígitos
+
+✔ Tipo de cuenta válido
+
+✔ Saldo no negativo
+
+✔ Usuario existente antes de asociar cuenta
+
+✔ Restricción de retiros según perfil
+
+---
+
+# 📈 Posibles Mejoras Futuras
+- Persistencia con LocalStorage
+- Base de datos real
+- Backend con Node.js o Java
+- Hashing de contraseñas
+- JWT/Auth real
+- Historial de transacciones
+- Transferencias entre cuentas
+- Dashboard administrativo
+- Tests automatizados
+- API REST
+- Deploy fullstack
+---
+# 👨‍💻 Autor
+### Alonso Cuevas Pizarro
+
+# 📄 Licencia
+
+Este proyecto está bajo licencia MIT. Puedes utilizarlo, modificarlo y distribuirlo libremente.
